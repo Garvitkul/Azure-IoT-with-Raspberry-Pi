@@ -1,4 +1,36 @@
 Azure IoT Hub is a collection of managed services that can connect, monitor, and control IoT devices. It also includes secure communication for devices, with data visualization and analytics that help the device manufacturers to build, deploy, and manage IoT applications with the help of Azure cloud. Azure IoT Hub’s Device-to-Cd telemetry data lets us know about the state of the connected IoT devices, and the Cloud-to-Device messages enable us to send commands and notifications to the connected devices. An example could be like, using a smart home automation system, we can collect various sensor data and send them to Azure IoT Hub to visualize, store and manage them. We can also control the output devices from the Azure IoT Hub interface.
+Central hub for bi-directional communication for IoT application and devices supports both device-cloud and cloud-device communication, it also supports multiple messaging patterns such as a device to cloud telemetry, file upload from devices, and request-reply methods and finally, we can use the per-device authentication method that enables each device to connect securely to the IoT Hub.
 
-**Central hub for bi-directional communication for IoT application and devices supports both device-cloud and cloud-device communication, it also supports multiple messaging patterns such as a device to cloud telemetry, file upload from devices, and request-reply methods and finally, we can use the per-device authentication method that enables each device to connect securely to the IoT Hub.**
 
+
+Creating an Azure IoT Hub
+
+We are ready to do all the necessary setups that are required for setting up Microsoft Azure services but before that, make sure you have a Microsoft account. If you do not have that, you can simply sign up. Thereafter, go to the Azure portal using portal.azure.com and log in.
+Once you are logged in, go to the Azure homepage, select the Create a resource button, and then search for IoT Hub in the Search the Marketplace field. Select IoT Hub from the search results, and then select Create. The images below will give you a better idea of the process.
+In the Subscription section, you need to select the subscription to use it for your hub. In our case, we are opting for a Trial account and we have selected “Free Trial”.
+Next, in the Resource Group Section, select your resource group. If you do not have one, you need to create a new one by clicking on the Create new and enter the name of the Resource.
+In the Region Section, you can use the dropdown menu to select your preferred region.
+In the IoT Hub Name Section, you need to enter a name for your hub. This must be unique. All the necessary communications will happen with this name.
+Under Tab “Size and Scale”, select “Free Tier” and Click on Next. Then click on “Review+Create”. It will take a few minutes to create the IoT Hub. Click on the name of the IoT Hub you created. Note down the Hostname from the window as shown in the image below. Then click on the Shared access policies in the Settings. Shared access policies are highlighted in the image below. Click on the iothubowner option under Policy. Note down the Primary key and Connection string-primary key for future references. Now, to Register a New Device under IoT Hub, Click on IoT Devices. In the Device Explorer pane, click on Add to add a device to the hub.
+
+
+
+Fill in the Following Information in the New Devices Tab.
+
+1. Device ID: Enter Id for the device. Device Ids need to be unique.
+2. Authentication Type: Select a Symmetric Key.
+3. Auto Generate Keys: Select this check box.
+4. Connect Device to IoT Hub: Click Enable
+
+
+
+Now, set up the Raspberry Pi
+
+
+
+Once done, you can open the CLI, and run the following commands to install the Azure add-on’s which will be used to show the sensor data.
+
+az extension add --name azure-cli-iot-ext  
+
+
+Your project is ready.
