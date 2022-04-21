@@ -1,6 +1,3 @@
-# FutureReadyTalentInternship
-A project submitted for the Future Ready Talent Internship of Microsoft.
-
 **We are using Azure IoT Hub to fetch the data of the Humidity and Temperature from the Raspberry Pi Client to Azure Portal**
 
 It allows you to communicate  with your device without much coding in the portal.
